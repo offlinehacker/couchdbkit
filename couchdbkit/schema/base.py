@@ -310,7 +310,7 @@ class DocumentSchema(object):
     def wrap(cls, data):
         """ wrap `data` dict in object properties """
         instance = cls()
-        instance._doc = data
+        instance._doc = data.copy()
         for prop in instance._properties.values():
             if prop.name in data:
                 value = data[prop.name]
